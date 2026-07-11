@@ -301,6 +301,27 @@ transform:scale(1.05);
 
 }
 
+@media (max-width:768px){
+
+.sky{
+    width:92vw;
+    height:420px;
+}
+
+.star{
+    font-size:24px;
+}
+
+.continue-btn{
+    margin-top:16px;
+}
+
+.title{
+    font-size:1.8rem;
+}
+
+}
+
 </style>
 
 `;            const sky = container.querySelector("#sky");

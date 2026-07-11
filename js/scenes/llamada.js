@@ -24,7 +24,6 @@ export function LlamadaScene(){
 
         render(container){
 
-            // 👇 IMPORTANTE
             container.style.opacity = "1";
             container.style.transition = "opacity .8s";
             container.onclick = null;
@@ -184,6 +183,56 @@ transition:.35s;
 
 }
 
+/* ===========================
+   MÓVIL
+=========================== */
+
+@media (max-width:768px){
+
+.call-scene{
+
+padding:20px;
+
+}
+
+.call-card{
+
+margin-bottom:35px;
+
+}
+
+.avatar-ring{
+
+width:130px;
+height:130px;
+
+}
+
+.call-name{
+
+font-size:1.6rem;
+margin-top:16px;
+
+}
+
+.call-status{
+
+font-size:.95rem;
+
+}
+
+.phrase{
+
+width:92vw;
+
+font-size:1.45rem;
+
+line-height:1.6;
+
+}
+
+}
+
 </style>
 
 `;
@@ -205,7 +254,6 @@ transition:.35s;
 
                         casa.render(container);
 
-                        // 👇 ESTA ES LA LÍNEA QUE FALTABA
                         container.style.opacity = "1";
 
                     },800);
