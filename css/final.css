@@ -1,0 +1,1370 @@
+/* ===========================
+   PROYECTO LUNA - FINAL.CSS
+   PARTE 1
+===========================*/
+
+*{
+    box-sizing:border-box;
+}
+
+html,body{
+    overflow:hidden;
+}
+
+body{
+
+    margin:0;
+    padding:0;
+
+    font-family:
+    "Segoe UI",
+    sans-serif;
+
+    color:#fff;
+
+}
+
+/* CONTENEDOR GENERAL */
+
+#app{
+
+    width:100vw;
+    height:100vh;
+
+    overflow:hidden;
+    position:relative;
+
+}
+
+/* TODAS LAS ESCENAS */
+
+.intro,
+.minecraft,
+.map-scene,
+.letter-scene,
+.call-scene,
+.final-scene{
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    flex-direction:column;
+
+    position:relative;
+
+    animation:sceneFade .9s ease;
+
+    padding:30px;
+
+}
+
+/* TEXTO GENERAL */
+
+.intro-text,
+.minecraft-text,
+.map-text{
+
+    max-width:700px;
+
+    font-size:1.45rem;
+
+    line-height:1.9;
+
+    text-align:center;
+
+    color:white;
+
+    text-shadow:
+    0 0 15px rgba(255,255,255,.35);
+
+    transition:.35s;
+
+    z-index:5;
+
+}
+
+/* FONDO OSCURO */
+
+.intro::before,
+.minecraft::before,
+.map-scene::before,
+.letter-scene::before,
+.call-scene::before,
+.final-scene::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    radial-gradient(circle at top,
+    rgba(40,50,90,.35),
+    rgba(0,0,0,.95));
+
+    z-index:0;
+
+}
+
+/* ESTRELLAS */
+
+.intro::after,
+.minecraft::after,
+.map-scene::after,
+.letter-scene::after,
+.call-scene::after,
+.final-scene::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background-image:
+
+    radial-gradient(white 1px,transparent 1px),
+    radial-gradient(white 1px,transparent 1px),
+    radial-gradient(#9fc7ff 1px,transparent 1px);
+
+    background-size:
+    120px 120px,
+    170px 170px,
+    240px 240px;
+
+    background-position:
+    0 0,
+    40px 70px,
+    90px 40px;
+
+    opacity:.8;
+
+    animation:
+    starsMove 60s linear infinite;
+
+}
+
+/* APARICIÓN */
+
+@keyframes sceneFade{
+
+    from{
+
+        opacity:0;
+        transform:scale(1.02);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:scale(1);
+
+    }
+
+}
+
+@keyframes starsMove{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(-120px);
+
+    }
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.intro,
+.minecraft,
+.map-scene,
+.letter-scene,
+.call-scene,
+.final-scene{
+
+padding:24px;
+
+}
+
+.intro-text,
+.minecraft-text,
+.map-text{
+
+font-size:1.15rem;
+
+line-height:1.8;
+
+}
+
+}/* ===========================
+   CARTA
+===========================*/
+
+.letter{
+
+    width:min(900px,95%);
+
+    max-height:82vh;
+
+    background:#fdf7ec;
+
+    color:#333;
+
+    border-radius:22px;
+
+    box-shadow:
+    0 30px 80px rgba(0,0,0,.45);
+
+    display:flex;
+
+    flex-direction:column;
+
+    overflow:hidden;
+
+    z-index:20;
+
+}
+
+/* TÍTULO */
+
+.letter h2{
+
+    margin:0;
+
+    padding:28px;
+
+    text-align:center;
+
+    color:#d14b83;
+
+    font-size:2rem;
+
+    background:white;
+
+    border-bottom:1px solid #ececec;
+
+}
+
+/* CONTENIDO */
+
+.letter-content{
+
+    padding:34px;
+
+    overflow-y:auto;
+
+    flex:1;
+
+    scroll-behavior:smooth;
+
+}
+
+/* SCROLL */
+
+.letter-content::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+.letter-content::-webkit-scrollbar-thumb{
+
+background:#d7b48f;
+
+border-radius:20px;
+
+}
+
+.letter-content p{
+
+    margin-bottom:18px;
+
+    color:#444;
+
+    line-height:1.9;
+
+    font-size:1.08rem;
+
+}
+
+/* NEGRITAS */
+
+.letter-content b{
+
+color:#222;
+
+}
+
+/* CURSIVAS */
+
+.letter-content i{
+
+color:#9d4d7a;
+
+}
+
+/* BOTÓN */
+
+#continueLetter{
+
+    margin:24px auto 30px;
+
+    border:none;
+
+    padding:16px 34px;
+
+    border-radius:50px;
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #ff77b7,
+    #ff4f8d);
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    transition:.3s;
+
+}
+
+#continueLetter:hover{
+
+transform:scale(1.05);
+
+box-shadow:
+0 0 25px rgba(255,105,180,.45);
+
+}
+
+/* MÓVIL */
+
+@media(max-width:768px){
+
+.letter{
+
+width:96%;
+
+max-height:88vh;
+
+border-radius:18px;
+
+}
+
+.letter h2{
+
+font-size:1.6rem;
+
+padding:22px;
+
+}
+
+.letter-content{
+
+padding:22px;
+
+}
+
+.letter-content p{
+
+font-size:1rem;
+
+line-height:1.75;
+
+}
+
+#continueLetter{
+
+width:85%;
+
+margin:18px auto 24px;
+
+}
+
+}/* ===========================
+   MINECRAFT
+===========================*/
+
+.minecraft{
+
+    gap:40px;
+
+}
+
+/* CASA */
+
+.house{
+
+    position:relative;
+
+    transform:scale(1.35);
+
+    image-rendering:pixelated;
+
+    animation:houseFloat 4s ease-in-out infinite;
+
+}
+
+/* SUELO */
+
+.house::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    top:130px;
+
+    width:260px;
+
+    height:60px;
+
+    border-radius:8px;
+
+    background:
+    repeating-linear-gradient(
+        90deg,
+        #5d8b3d 0 24px,
+        #6ea547 24px 48px
+    );
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.45);
+
+}
+
+/* BLOQUES */
+
+.roof,
+.body,
+.window,
+.door{
+
+    image-rendering:pixelated;
+
+    box-shadow:
+    inset 0 0 0 2px rgba(255,255,255,.08);
+
+}
+
+/* TEXTO */
+
+.minecraft-text{
+
+    margin-top:40px;
+
+    max-width:720px;
+
+}
+
+/* ===========================
+   MAPA
+===========================*/
+
+.earth{
+
+    width:min(420px,80vw);
+
+    filter:
+    drop-shadow(0 0 25px rgba(130,180,255,.45));
+
+    animation:
+    earthFloat 6s ease-in-out infinite;
+
+}
+
+.map-text{
+
+    margin-top:35px;
+
+}
+
+/* ===========================
+   LLAMADA
+===========================*/
+
+.call-card{
+
+    width:min(380px,90vw);
+
+    background:
+
+    linear-gradient(
+        180deg,
+        #1d1d1d,
+        #111);
+
+    border-radius:30px;
+
+    padding:35px;
+
+    box-shadow:
+    0 30px 70px rgba(0,0,0,.5);
+
+    text-align:center;
+
+}
+
+.call-avatar{
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    margin:auto;
+
+    background:
+
+    radial-gradient(circle,#ff87c2,#ff4f8d);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:3rem;
+
+    color:white;
+
+    margin-bottom:25px;
+
+}
+
+.call-name{
+
+    font-size:1.8rem;
+
+    margin-bottom:10px;
+
+}
+
+.call-state{
+
+    opacity:.75;
+
+    margin-bottom:35px;
+
+}
+
+.call-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+
+}
+
+.call-btn{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    border:none;
+
+    cursor:pointer;
+
+    font-size:1.5rem;
+
+    transition:.3s;
+
+}
+
+.call-btn:hover{
+
+    transform:scale(1.08);
+
+}
+
+.answer{
+
+    background:#36c85d;
+
+    color:white;
+
+}
+
+.decline{
+
+    background:#ff5a5a;
+
+    color:white;
+
+}
+
+/* ===========================
+   ANIMACIONES
+===========================*/
+
+@keyframes earthFloat{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+@keyframes houseFloat{
+
+    0%{
+
+        transform:scale(1.35) translateY(0px);
+
+    }
+
+    50%{
+
+        transform:scale(1.35) translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:scale(1.35) translateY(0px);
+
+    }
+
+}
+
+/* ===========================
+   MÓVIL
+===========================*/
+
+@media(max-width:768px){
+
+.house{
+
+transform:scale(1.05);
+
+}
+
+.house::after{
+
+width:180px;
+
+top:105px;
+
+}
+
+.earth{
+
+width:75vw;
+
+}
+
+.call-card{
+
+padding:28px;
+
+}
+
+.call-avatar{
+
+width:95px;
+
+height:95px;
+
+font-size:2.5rem;
+
+}
+
+.call-name{
+
+font-size:1.4rem;
+
+}
+
+}/* ===========================
+   ESCENA FINAL
+===========================*/
+
+.final-scene{
+
+    text-align:center;
+
+    justify-content:center;
+
+    gap:35px;
+
+}
+
+/* CASA FINAL */
+
+.final-house{
+
+    transform:scale(1.4);
+
+    animation:houseEnd 4s ease-in-out infinite;
+
+}
+
+/* BARRA */
+
+.progress-box{
+
+    width:min(420px,90vw);
+
+}
+
+.progress-title{
+
+    margin-bottom:14px;
+
+    font-size:1.1rem;
+
+    letter-spacing:1px;
+
+    color:white;
+
+}
+
+.progress{
+
+    width:100%;
+
+    height:16px;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+    background:rgba(255,255,255,.12);
+
+    box-shadow:
+    inset 0 0 10px rgba(0,0,0,.45);
+
+}
+
+.progress-fill{
+
+    width:100%;
+
+    height:100%;
+
+    border-radius:50px;
+
+    background:
+
+    linear-gradient(
+    90deg,
+    #52ff93,
+    #8bffb0);
+
+    animation:progressGlow 2s infinite;
+
+}
+
+/* MENSAJE */
+
+.final-message{
+
+    width:min(760px,90vw);
+
+    font-size:1.35rem;
+
+    line-height:1.9;
+
+    text-align:center;
+
+    text-shadow:
+    0 0 15px rgba(255,255,255,.25);
+
+}
+
+/* DESTACADO */
+
+.final-message strong{
+
+    color:#ffd3ea;
+
+}
+
+/* CORAZÓN */
+
+.final-heart{
+
+    font-size:3rem;
+
+    animation:heartbeat 1.4s infinite;
+
+}
+
+/* DESVANECIDO */
+
+.fade-enter{
+
+    animation:fadeEnter .8s ease both;
+
+}
+
+.fade-leave{
+
+    animation:fadeLeave .5s ease both;
+
+}
+
+@keyframes fadeEnter{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes fadeLeave{
+
+from{
+
+opacity:1;
+
+}
+
+to{
+
+opacity:0;
+
+}
+
+}
+
+@keyframes heartbeat{
+
+0%{
+
+transform:scale(1);
+
+}
+
+25%{
+
+transform:scale(1.08);
+
+}
+
+50%{
+
+transform:scale(1);
+
+}
+
+75%{
+
+transform:scale(1.08);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+@keyframes progressGlow{
+
+0%{
+
+filter:brightness(1);
+
+}
+
+50%{
+
+filter:brightness(1.3);
+
+}
+
+100%{
+
+filter:brightness(1);
+
+}
+
+}
+
+@keyframes houseEnd{
+
+0%{
+
+transform:scale(1.4) translateY(0);
+
+}
+
+50%{
+
+transform:scale(1.4) translateY(-10px);
+
+}
+
+100%{
+
+transform:scale(1.4) translateY(0);
+
+}
+
+}
+
+/* =========
+   BOTONES
+========= */
+
+button{
+
+font-family:inherit;
+
+}
+
+button:hover{
+
+transform:translateY(-2px);
+
+}
+
+button:active{
+
+transform:scale(.98);
+
+}
+
+/* =========
+   RESPONSIVE
+========= */
+
+@media(max-width:768px){
+
+.final-message{
+
+font-size:1.05rem;
+
+line-height:1.75;
+
+}
+
+.progress-title{
+
+font-size:1rem;
+
+}
+
+.final-house{
+
+transform:scale(1.1);
+
+}
+
+.final-heart{
+
+font-size:2.5rem;
+
+}
+
+}.minecraft-house{
+
+    width:min(420px,85vw);
+
+    image-rendering:pixelated;
+
+    filter:
+        drop-shadow(0 0 25px rgba(255,255,255,.20));
+
+    animation:houseFloat 4s ease-in-out infinite;
+
+    position:relative;
+    z-index:5;
+
+}
+
+
+.minecraft-text{
+
+    position:relative;
+    z-index:5;
+
+}/* =====================
+   MAPA
+=====================*/
+
+.map-scene{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.map-background{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100vw;
+
+    height:100vh;
+
+    object-fit:cover;
+
+    object-position:center;
+
+    z-index:0;
+
+}
+
+.map-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    padding:45px;
+
+    background:
+
+    linear-gradient(
+        transparent 55%,
+        rgba(0,0,0,.65));
+
+    z-index:2;
+
+}
+
+.map-text{
+
+    max-width:850px;
+
+    margin:auto;
+
+    text-align:center;
+
+    font-size:1.4rem;
+
+    line-height:1.8;
+
+    color:white;
+
+}/*==================================
+      CONSTELACIÓN DE LU
+==================================*/
+
+.reasons-scene{
+
+    width:100%;
+    height:100%;
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle at top,#1b2d5c 0%,#050816 100%);
+
+}
+
+.reasons-title{
+
+    position:absolute;
+
+    top:35px;
+
+    font-size:1.4rem;
+
+    color:white;
+
+    text-shadow:0 0 15px rgba(255,255,255,.4);
+
+}
+
+.stars-grid{
+
+    width:min(700px,92vw);
+
+    display:grid;
+
+    grid-template-columns:repeat(6,1fr);
+
+    gap:28px;
+
+    justify-items:center;
+
+}
+
+.reason-star{
+
+    font-size:2rem;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    user-select:none;
+
+    filter:grayscale(100%) brightness(.7);
+
+    animation:twinkle 2.5s infinite ease-in-out;
+
+}
+
+.reason-star:hover{
+
+    transform:scale(1.25);
+
+}
+
+.reason-star.opened{
+
+    animation:none !important;
+
+    filter:
+        brightness(1.3)
+        drop-shadow(0 0 10px gold)
+        drop-shadow(0 0 25px gold);
+
+    color:#FFD84D;
+
+    transform:scale(1.15);
+
+}
+
+.reason-popup{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(0,0,0,.65);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.3s;
+
+}
+
+.reason-popup.show{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+}
+
+.reason-popup p{
+
+    width:min(420px,85vw);
+
+    background:#fffaf2;
+
+    color:#333;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    font-size:1.15rem;
+
+    line-height:1.7;
+
+    text-align:center;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.4);
+
+}
+
+#closeReason{
+
+    position:absolute;
+
+    bottom:18%;
+
+    padding:14px 28px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:#ff5e9d;
+
+    color:white;
+
+    font-size:1rem;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#closeReason:hover{
+
+    transform:scale(1.05);
+
+}
+
+@keyframes twinkle{
+
+    0%{
+
+        transform:scale(1);
+
+        opacity:.6;
+
+    }
+
+    50%{
+
+        transform:scale(1.12);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+        opacity:.6;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+.stars-grid{
+
+grid-template-columns:repeat(5,1fr);
+
+gap:22px;
+
+}
+
+.reason-star{
+
+font-size:1.8rem;
+
+}
+
+.reasons-title{
+
+font-size:1.1rem;
+
+}
+
+.reason-popup p{
+
+font-size:1rem;
+
+padding:22px;
+
+}
+
+#closeReason{
+
+bottom:12%;
+
+width:75%;
+
+}
+
+}.message-line{
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+    animation:showLine .8s forwards;
+
+    margin:22px 0;
+
+}
+
+@keyframes showLine{
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
