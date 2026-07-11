@@ -67,3 +67,35 @@
         0 3px 10px rgba(0,0,0,.8);
 
 }
+
+/* ===========================
+   MÓVIL
+=========================== */
+
+@media (max-width:768px){
+
+    .map-background{
+
+        transform:scale(.82);
+
+        transform-origin:center;
+
+    }
+
+    .map-overlay{
+
+        padding:22px;
+
+    }
+
+    .map-text{
+
+        font-size:1.2rem;
+
+        line-height:1.5;
+
+        max-width:92vw;
+
+    }
+
+}
