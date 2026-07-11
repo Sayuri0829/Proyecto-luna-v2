@@ -10,7 +10,7 @@ const phrases = [
 
     "Y cada vez que pasa... seguimos diciendo lo mismo:",
 
-    "\"Es alucinante.\""
+    "\"ALUCINANTE.\""
 
 ];
 
